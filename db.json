@@ -1,0 +1,152 @@
+{
+  "ELEMENT1": [
+    {
+      "position": 1,
+      "name": "Juan \"El Jalapeño\"",
+      "tacos": 24,
+      "time": 12
+    },
+    {
+      "position": 2,
+      "name": "Lola \"La Rápida\"",
+      "tacos": 30,
+      "time": 10
+    },
+    {
+      "position": 3,
+      "name": "Nacho Libre",
+      "tacos": 18,
+      "time": 15
+    },
+    {
+      "position": 4,
+      "name": "TacoBot 3000",
+      "tacos": 40,
+      "time": 8
+    },
+    {
+      "position": 5,
+      "name": "Salsita Mix",
+      "tacos": 22,
+      "time": 13
+    },
+    {
+      "position": 6,
+      "name": "El Maíz Furioso",
+      "tacos": 35,
+      "time": 9
+    },
+    {
+      "position": 7,
+      "name": "TortiQueen",
+      "tacos": 28,
+      "time": 11
+    },
+    {
+      "position": 8,
+      "name": "GuacaMonster",
+      "tacos": 33,
+      "time": 10
+    }
+  ],
+  "ELEMENT2": [
+    {
+      "position": 1,
+      "name": "Pedro \"El Fuego\"",
+      "tacos": 20,
+      "time": 14
+    },
+    {
+      "position": 2,
+      "name": "Ana \"La Veloz\"",
+      "tacos": 32,
+      "time": 9
+    },
+    {
+      "position": 3,
+      "name": "Carlos \"El Grande\"",
+      "tacos": 26,
+      "time": 12
+    },
+    {
+      "position": 4,
+      "name": "RoboTaco X",
+      "tacos": 38,
+      "time": 7
+    },
+    {
+      "position": 5,
+      "name": "Salsa Picante",
+      "tacos": 19,
+      "time": 16
+    },
+    {
+      "position": 6,
+      "name": "Maíz Legendario",
+      "tacos": 37,
+      "time": 8
+    },
+    {
+      "position": 7,
+      "name": "TortiMaster",
+      "tacos": 25,
+      "time": 13
+    },
+    {
+      "position": 8,
+      "name": "GuacaBeast",
+      "tacos": 29,
+      "time": 11
+    }
+  ],
+  "ELEMENT3": [
+    {
+      "position": 1,
+      "name": "Miguel \"El Sabroso\"",
+      "tacos": 21,
+      "time": 13
+    },
+    {
+      "position": 2,
+      "name": "Sofía \"La Rápida\"",
+      "tacos": 29,
+      "time": 11
+    },
+    {
+      "position": 3,
+      "name": "Diego \"El Grande\"",
+      "tacos": 23,
+      "time": 14
+    },
+    {
+      "position": 4,
+      "name": "TacoDrone 9000",
+      "tacos": 41,
+      "time": 6
+    },
+    {
+      "position": 5,
+      "name": "Salsa Verde",
+      "tacos": 20,
+      "time": 15
+    },
+    {
+      "position": 6,
+      "name": "Maíz Enmascarado",
+      "tacos": 34,
+      "time": 10
+    },
+    {
+      "position": 7,
+      "name": "Reina Tortilla",
+      "tacos": 27,
+      "time": 12
+    },
+    {
+      "position": 8,
+      "name": "GuacaRex",
+      "tacos": 31,
+      "time": 9
+    }
+  ]
+}

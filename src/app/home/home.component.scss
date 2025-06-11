@@ -1,0 +1,74 @@
+.sidenav-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+
+  .sidenav-content {
+    width: 7rem;
+    background-color: floralwhite;
+
+    .example-flex-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .icon-container {
+        margin-top: 2rem;
+      }
+    }
+
+
+  }
+
+  .mat-sidenav-content {
+    display: flex;
+
+    .graph-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+
+      .line-chart-div {
+
+        width: 45rem;
+        height: 26rem;
+        border: solid 1px black;
+        margin: 1rem;
+
+      }
+
+      .pie-chart-div {
+        width: 45rem;
+        height: 26rem;
+        border: solid 1px black;
+        margin: 1rem;
+
+      }
+
+      .bar-chart-div {
+        width: 45rem;
+        height: 26rem;
+        border: solid 1px black;
+        margin: 1rem;
+
+      }
+
+      .mixed-chart-div {
+        width: 45rem;
+        height: 26rem;
+        border: solid 1px black;
+        margin: 1rem;
+
+      }
+
+    }
+  }
+
+}
+
+
