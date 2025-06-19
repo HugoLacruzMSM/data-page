@@ -1,0 +1,92 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav class="sidenav-content" mode="side" opened>
+    <section>
+      <div class="example-flex-container">
+        <div class="icon-container">
+          <button aria-label="Button Home" mat-icon-button routerLink="/home">
+            <mat-icon>home</mat-icon>
+          </button>
+        </div>
+        <div class="icon-container">
+          <button aria-label="Button Data" mat-icon-button routerLink="/data">
+            <mat-icon>dashboard</mat-icon>
+          </button>
+        </div>
+      </div>
+    </section>
+  </mat-sidenav>
+  <mat-sidenav-content class="mat-sidenav-content">
+    <div class="mat-tabs-div">
+      <mat-tab-group class="mat-tab-group">
+        <mat-tab class="mat-tabs" label="Users1">
+          <table [dataSource]="dataSource1" mat-table>
+            <ng-container matColumnDef="position">
+              <th *matHeaderCellDef mat-header-cell> Position</th>
+              <td *matCellDef="let element" mat-cell> {{ element.position }}</td>
+            </ng-container>
+            <ng-container matColumnDef="name">
+              <th *matHeaderCellDef mat-header-cell> Name</th>
+              <td *matCellDef="let element" mat-cell> {{ element.name }}</td>
+            </ng-container>
+            <ng-container matColumnDef="tacos">
+              <th *matHeaderCellDef mat-header-cell> Tacos</th>
+              <td *matCellDef="let element" mat-cell> {{ element.tacos }}</td>
+            </ng-container>
+            <ng-container matColumnDef="time">
+              <th *matHeaderCellDef mat-header-cell> Time</th>
+              <td *matCellDef="let element" mat-cell> {{ element.time }}</td>
+            </ng-container>
+            <tr *matHeaderRowDef="displayedColumns1" mat-header-row></tr>
+            <tr *matRowDef="let row; columns:displayedColumns1" mat-row></tr>
+          </table>
+        </mat-tab>
+        <mat-tab class="mat-tabs" label="Users2">
+          <table [dataSource]="dataSource2" mat-table>
+            <ng-container matColumnDef="position">
+              <th *matHeaderCellDef mat-header-cell> Position</th>
+              <td *matCellDef="let element" mat-cell> {{ element.position }}</td>
+            </ng-container>
+            <ng-container matColumnDef="name">
+              <th *matHeaderCellDef mat-header-cell> Name</th>
+              <td *matCellDef="let element" mat-cell> {{ element.name }}</td>
+            </ng-container>
+            <ng-container matColumnDef="tacos">
+              <th *matHeaderCellDef mat-header-cell> Tacos</th>
+              <td *matCellDef="let element" mat-cell> {{ element.tacos }}</td>
+            </ng-container>
+            <ng-container matColumnDef="time">
+              <th *matHeaderCellDef mat-header-cell> Time</th>
+              <td *matCellDef="let element" mat-cell> {{ element.time }}</td>
+            </ng-container>
+            <tr *matHeaderRowDef="displayedColumns1" mat-header-row></tr>
+            <tr *matRowDef="let row; columns:displayedColumns1" mat-row></tr>
+          </table>
+        </mat-tab>
+        <mat-tab class="mat-tabs" label="Users3">
+          <table [dataSource]="dataSource3" mat-table>
+            <ng-container matColumnDef="position">
+              <th *matHeaderCellDef mat-header-cell> Position</th>
+              <td *matCellDef="let element" mat-cell> {{ element.position }}</td>
+            </ng-container>
+            <ng-container matColumnDef="name">
+              <th *matHeaderCellDef mat-header-cell> Name</th>
+              <td *matCellDef="let element" mat-cell> {{ element.name }}</td>
+            </ng-container>
+            <ng-container matColumnDef="tacos">
+              <th *matHeaderCellDef mat-header-cell> Tacos</th>
+              <td *matCellDef="let element" mat-cell> {{ element.tacos }}</td>
+            </ng-container>
+            <ng-container matColumnDef="time">
+              <th *matHeaderCellDef mat-header-cell> Time</th>
+              <td *matCellDef="let element" mat-cell> {{ element.time }}</td>
+            </ng-container>
+            <tr *matHeaderRowDef="displayedColumns1" mat-header-row></tr>
+            <tr *matRowDef="let row; columns:displayedColumns1" mat-row></tr>
+          </table>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
