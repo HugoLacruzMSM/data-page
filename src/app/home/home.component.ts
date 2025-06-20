@@ -7,7 +7,7 @@ import {LineChartComponent} from '../charts/line-chart/line-chart.component';
 import {PieChartComponent} from '../charts/pie-chart/pie-chart.component';
 import {BarChartComponent} from '../charts/bar-chart/bar-chart.component';
 import {MixedChartComponent} from '../charts/mixed-chart/mixed-chart.component';
-import {DataService} from '../data.service';
+import {DataService} from '../service/data.service';
 import {UserData} from '../models/userData';
 
 @Component({

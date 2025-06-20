@@ -6,7 +6,7 @@ import {MatIcon} from '@angular/material/icon';
 import {MatTab, MatTabGroup} from '@angular/material/tabs';
 import {MatTableModule} from '@angular/material/table';
 import {UserData} from '../models/userData';
-import {DataService} from '../data.service';
+import {DataService} from '../service/data.service';
 
 
 @Component({
