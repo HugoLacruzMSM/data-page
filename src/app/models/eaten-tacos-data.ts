@@ -1,4 +1,4 @@
-export interface UserData {
+export interface EatenTacosData {
   position: number;
   name: string;
   tacos: number;

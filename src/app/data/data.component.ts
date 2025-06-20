@@ -5,8 +5,8 @@ import {RouterLink} from '@angular/router';
 import {MatIcon} from '@angular/material/icon';
 import {MatTab, MatTabGroup} from '@angular/material/tabs';
 import {MatTableModule} from '@angular/material/table';
-import {UserData} from '../models/userData';
-import {DataService} from '../data.service';
+import {EatenTacosData} from '../models/eaten-tacos-data';
+import {DataService} from '../service/data.service';
 
 
 @Component({
@@ -26,25 +26,25 @@ import {DataService} from '../data.service';
   styleUrl: './data.component.scss'
 })
 export class DataComponent implements OnInit {
-  dataSource1: UserData[] = [];
-  dataSource2: UserData[] = [];
-  dataSource3: UserData[] = [];
-  displayedColumns1: string[] = ['position', 'name', 'tacos', 'time'];
+  dataSourceValencia: EatenTacosData[] = [];
+  dataSourceMadrid: EatenTacosData[] = [];
+  dataSourceBarcelona: EatenTacosData[] = [];
+  displayedColumns: string[] = ['position', 'name', 'tacos', 'time'];
 
   constructor(private dataService: DataService) {
   }
 
   ngOnInit() {
-    this.dataService.getData1().subscribe(res => {
-      this.dataSource1 = res;
+    this.dataService.getDataValencia().subscribe(res => {
+      this.dataSourceValencia = res;
     });
 
-    this.dataService.getData2().subscribe(res => {
-      this.dataSource2 = res;
+    this.dataService.getDataMadrid().subscribe(res => {
+      this.dataSourceMadrid = res;
     });
 
-    this.dataService.getData3().subscribe(res => {
-      this.dataSource3 = res;
+    this.dataService.getDataBarcelona().subscribe(res => {
+      this.dataSourceBarcelona = res;
     });
   }
 

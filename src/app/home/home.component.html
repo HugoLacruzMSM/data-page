@@ -1,36 +1,36 @@
 <mat-sidenav-container class="sidenav-container">
-    <mat-sidenav class="sidenav-content" mode="side" opened>
-        <section>
-            <div class="example-flex-container">
-                <div class="icon-container">
-                    <button aria-label="Button Home" mat-icon-button>
-                        <mat-icon>home</mat-icon>
-                    </button>
-                </div>
-                <div class="icon-container">
-                    <button aria-label="Button Data" mat-icon-button routerLink="/data">
-                        <mat-icon>dashboard</mat-icon>
-                    </button>
-                </div>
-            </div>
-        </section>
-    </mat-sidenav>
-    <mat-sidenav-content class="mat-sidenav-content">
-        <div class="graph-container">
-            <div class="line-chart-div">
-                <app-line-chart [userData]="dataChart1"></app-line-chart>
-            </div>
-            <div class="pie-chart-div">
-                <app-pie-chart [userData]="dataChart2"></app-pie-chart>
-            </div>
-            <div class="bar-chart-div">
-                <app-bar-chart [userData]="dataChart3"></app-bar-chart>
-            </div>
-            <div class="mixed-chart-div">
-                <app-mixed-chart [userData1]="dataChart1" [userData2]="dataChart2"></app-mixed-chart>
-            </div>
+  <mat-sidenav class="sidenav-content" mode="side" opened>
+    <section>
+      <div class="example-flex-container">
+        <div class="icon-container">
+          <button aria-label="Button Home" mat-icon-button>
+            <mat-icon>home</mat-icon>
+          </button>
         </div>
-    </mat-sidenav-content>
+        <div class="icon-container">
+          <button aria-label="Button Data" mat-icon-button routerLink="/data">
+            <mat-icon>dashboard</mat-icon>
+          </button>
+        </div>
+      </div>
+    </section>
+  </mat-sidenav>
+  <mat-sidenav-content class="mat-sidenav-content">
+    <div class="graph-container">
+      <div class="line-chart-div">
+        <app-line-chart [userDataValencia]="dataChartValencia()"></app-line-chart>
+      </div>
+      <div class="pie-chart-div">
+        <app-pie-chart [userDataMadrid]="dataChartMadrid()"></app-pie-chart>
+      </div>
+      <div class="bar-chart-div">
+        <app-bar-chart [userDataBarcelona]="dataChartBarcelona()"></app-bar-chart>
+      </div>
+      <div class="mixed-chart-div">
+        <app-mixed-chart [userDataValencia]="dataChartValencia()"></app-mixed-chart>
+      </div>
+    </div>
+  </mat-sidenav-content>
 </mat-sidenav-container>
 
 

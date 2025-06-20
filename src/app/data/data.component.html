@@ -19,7 +19,7 @@
     <div class="mat-tabs-div">
       <mat-tab-group class="mat-tab-group">
         <mat-tab class="mat-tabs" label="Users1">
-          <table [dataSource]="dataSource1" mat-table>
+          <table [dataSource]="dataSourceValencia" mat-table>
             <ng-container matColumnDef="position">
               <th *matHeaderCellDef mat-header-cell> Position</th>
               <td *matCellDef="let element" mat-cell> {{ element.position }}</td>
@@ -36,12 +36,12 @@
               <th *matHeaderCellDef mat-header-cell> Time</th>
               <td *matCellDef="let element" mat-cell> {{ element.time }}</td>
             </ng-container>
-            <tr *matHeaderRowDef="displayedColumns1" mat-header-row></tr>
-            <tr *matRowDef="let row; columns:displayedColumns1" mat-row></tr>
+            <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+            <tr *matRowDef="let row; columns:displayedColumns" mat-row></tr>
           </table>
         </mat-tab>
         <mat-tab class="mat-tabs" label="Users2">
-          <table [dataSource]="dataSource2" mat-table>
+          <table [dataSource]="dataSourceMadrid" mat-table>
             <ng-container matColumnDef="position">
               <th *matHeaderCellDef mat-header-cell> Position</th>
               <td *matCellDef="let element" mat-cell> {{ element.position }}</td>
@@ -58,12 +58,12 @@
               <th *matHeaderCellDef mat-header-cell> Time</th>
               <td *matCellDef="let element" mat-cell> {{ element.time }}</td>
             </ng-container>
-            <tr *matHeaderRowDef="displayedColumns1" mat-header-row></tr>
-            <tr *matRowDef="let row; columns:displayedColumns1" mat-row></tr>
+            <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+            <tr *matRowDef="let row; columns:displayedColumns" mat-row></tr>
           </table>
         </mat-tab>
         <mat-tab class="mat-tabs" label="Users3">
-          <table [dataSource]="dataSource3" mat-table>
+          <table [dataSource]="dataSourceBarcelona" mat-table>
             <ng-container matColumnDef="position">
               <th *matHeaderCellDef mat-header-cell> Position</th>
               <td *matCellDef="let element" mat-cell> {{ element.position }}</td>
@@ -80,8 +80,8 @@
               <th *matHeaderCellDef mat-header-cell> Time</th>
               <td *matCellDef="let element" mat-cell> {{ element.time }}</td>
             </ng-container>
-            <tr *matHeaderRowDef="displayedColumns1" mat-header-row></tr>
-            <tr *matRowDef="let row; columns:displayedColumns1" mat-row></tr>
+            <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+            <tr *matRowDef="let row; columns:displayedColumns" mat-row></tr>
           </table>
         </mat-tab>
       </mat-tab-group>
