@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {UserData} from '../../models/userData';
+import {EatenTacosData} from '../../models/eaten-tacos-data';
 import {BaseChartDirective} from 'ng2-charts';
 
 @Component({
@@ -11,16 +11,16 @@ import {BaseChartDirective} from 'ng2-charts';
   styleUrl: './bar-chart.component.scss'
 })
 export class BarChartComponent {
-  @Input() userData!: UserData[];
+  @Input() userDataBarcelona!: EatenTacosData[];
 
 
   loadData() {
     return {
-      labels: this.getUserNames(),
+      labels: this.getUserNamesBarcelona(),
       datasets: [
         {
           label: 'Tacos',
-          data: this.getUserTacos(),
+          data: this.getUserTacosBarcelona(),
           backgroundColor: 'blueviolet',
         },
       ]
@@ -34,12 +34,12 @@ export class BarChartComponent {
     }
   }
 
-  getUserTacos(): number[] {
-    return this.userData.map(item => item.tacos);
+  getUserTacosBarcelona(): number[] {
+    return this.userDataBarcelona.map(item => item.tacos);
   }
 
-  getUserNames(): string[] {
-    return this.userData.map(item => item.name);
+  getUserNamesBarcelona(): string[] {
+    return this.userDataBarcelona.map(item => item.name);
   }
 
 }

@@ -25,6 +25,7 @@
 
   .mat-sidenav-content {
     display: flex;
+    flex-direction: column;
 
     .graph-container {
       display: flex;
@@ -65,6 +66,10 @@
         margin: 1rem;
 
       }
+
+    }
+
+    .mat-selector {
 
     }
   }

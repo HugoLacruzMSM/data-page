@@ -1,16 +1,17 @@
-import {Component, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, inject, OnInit} from '@angular/core';
 import {MatSidenav, MatSidenavContainer, MatSidenavContent} from '@angular/material/sidenav';
 import {MatIcon} from '@angular/material/icon';
 import {MatIconButton} from '@angular/material/button';
 import {RouterLink} from '@angular/router';
-import {LineChartComponent} from '../charts/line-chart/line-chart.component';
 import {PieChartComponent} from '../charts/pie-chart/pie-chart.component';
 import {BarChartComponent} from '../charts/bar-chart/bar-chart.component';
 import {MixedChartComponent} from '../charts/mixed-chart/mixed-chart.component';
-import {DataService} from '../data.service';
-import {UserData} from '../models/userData';
+import {DataService} from '../service/data.service';
+import {EatenTacosStore} from '../store/eaten-tacos.store';
+import {LineChartComponent} from '../charts/line-chart/line-chart.component';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-home',
   imports: [
     MatSidenavContainer,
@@ -19,34 +20,32 @@ import {UserData} from '../models/userData';
     MatIcon,
     MatIconButton,
     RouterLink,
-    LineChartComponent,
     PieChartComponent,
     BarChartComponent,
-    MixedChartComponent
+    MixedChartComponent,
+    LineChartComponent,
+
   ],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrl: './home.component.scss',
+  providers: [EatenTacosStore],
 })
 export class HomeComponent implements OnInit {
-  dataChart1: UserData[] = [];
-  dataChart2: UserData[] = [];
-  dataChart3: UserData[] = [];
+  eatenTacosStore = inject(EatenTacosStore);
+
+  dataChartValencia = this.eatenTacosStore.eatenTacosValencia;
+  dataChartMadrid = this.eatenTacosStore.eatenTacosMadrid;
+  dataChartBarcelona = this.eatenTacosStore.eatenTacosBarcelona;
 
   constructor(private dataService: DataService) {
   }
 
   ngOnInit() {
-    this.dataService.getData1().subscribe(res => {
-      this.dataChart1 = res.sort();
-    });
-
-    this.dataService.getData2().subscribe(res => {
-      this.dataChart2 = res;
-    });
-
-    this.dataService.getData3().subscribe(res => {
-      this.dataChart3 = res;
-    });
+    this.eatenTacosStore.loadEatenTacosValencia();
+    this.eatenTacosStore.loadEatenTacosMadrid();
+    this.eatenTacosStore.loadEatenTacosBarcelona();
+    this.eatenTacosStore.setEatenTacosValencia()
   }
+
 
 }

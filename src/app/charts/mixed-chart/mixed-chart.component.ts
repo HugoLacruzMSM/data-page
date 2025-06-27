@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {UserData} from '../../models/userData';
+import {EatenTacosData} from '../../models/eaten-tacos-data';
 import {BaseChartDirective} from 'ng2-charts';
 import {ChartData, ChartOptions} from 'chart.js';
 
@@ -12,24 +12,23 @@ import {ChartData, ChartOptions} from 'chart.js';
   styleUrl: './mixed-chart.component.scss'
 })
 export class MixedChartComponent {
-  @Input() userData1!: UserData[];
-  @Input() userData2!: UserData[];
+  @Input() userDataValencia!: EatenTacosData[];
 
 
   loadData(): ChartData {
     return {
-      labels: this.getUserNames1(),
+      labels: this.getUserNamesValencia(),
       datasets: [
         {
           type: 'bar',
           label: 'User Tacos',
-          data: this.getUserTacos1(),
+          data: this.getUserTacosValencia(),
           yAxisID: 'y',
         },
         {
           type: 'line',
           label: 'User Time',
-          data: this.getUserTime1(),
+          data: this.getUserTimeValencia(),
           yAxisID: "y1",
         },
       ]
@@ -60,19 +59,15 @@ export class MixedChartComponent {
     }
   }
 
-  getUserTacos1(): number[] {
-    return this.userData1.map(item => item.tacos);
+  getUserTacosValencia(): number[] {
+    return this.userDataValencia.map(item => item.tacos);
   }
 
-  getUserNames1(): string[] {
-    return this.userData1.map(item => item.name);
+  getUserNamesValencia(): string[] {
+    return this.userDataValencia.map(item => item.name);
   }
 
-  getUserTime1(): number[] {
-    return this.userData1.map(item => item.time);
-  }
-
-  getUserNames2(): string[] {
-    return this.userData2.map(item => item.name);
+  getUserTimeValencia(): number[] {
+    return this.userDataValencia.map(item => item.time);
   }
 }

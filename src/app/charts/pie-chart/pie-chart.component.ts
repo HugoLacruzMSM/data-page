@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {BaseChartDirective} from 'ng2-charts';
-import {UserData} from '../../models/userData';
+import {EatenTacosData} from '../../models/eaten-tacos-data';
 
 @Component({
   selector: 'app-pie-chart',
@@ -11,14 +11,14 @@ import {UserData} from '../../models/userData';
   styleUrl: './pie-chart.component.scss'
 })
 export class PieChartComponent {
-  @Input({required: true}) userData!: UserData[];
+  @Input({required: true}) userDataMadrid!: EatenTacosData[];
 
   loadData() {
     return {
-      labels: this.getUserNames(),
+      labels: this.getUserNamesMadrid(),
       datasets: [
         {
-          data: this.getUserTacos(),
+          data: this.getUserTacosMadrid(),
         },
       ]
     }
@@ -31,11 +31,11 @@ export class PieChartComponent {
     }
   }
 
-  getUserTacos(): number[] {
-    return this.userData.map(item => item.tacos);
+  getUserTacosMadrid(): number[] {
+    return this.userDataMadrid.map(item => item.tacos);
   };
 
-  getUserNames(): string[] {
-    return this.userData.map(item => item.name);
+  getUserNamesMadrid(): string[] {
+    return this.userDataMadrid.map(item => item.name);
   }
 }

@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {Chart, ChartData, ChartOptions, registerables} from 'chart.js';
-import {UserData} from '../../models/userData';
+import {EatenTacosData} from '../../models/eaten-tacos-data';
 import {BaseChartDirective} from 'ng2-charts';
 
 Chart.register(...registerables)
@@ -15,20 +15,20 @@ Chart.register(...registerables)
 })
 export class LineChartComponent {
 
-  @Input({required: true}) userData!: UserData[];
+  @Input({required: true}) userDataValencia!: EatenTacosData[];
 
   loadData(): ChartData<'line'> {
     return {
-      labels: this.getUserNames(),
+      labels: this.getUserNamesValencia(),
       datasets: [
         {
           label: 'User Tacos',
-          data: this.getUserTacos(),
+          data: this.getUserTacosValencia(),
           yAxisID: 'y',
         },
         {
           label: 'User Time',
-          data: this.getUserTime(),
+          data: this.getUserTimeValencia(),
           yAxisID: "y1",
         },
       ]
@@ -59,16 +59,16 @@ export class LineChartComponent {
     }
   }
 
-  getUserTacos(): number[] {
-    return this.userData.map(item => item.tacos);
+  getUserTacosValencia(): number[] {
+    return this.userDataValencia.map(item => item.tacos);
   }
 
-  getUserNames(): string[] {
-    return this.userData.map(item => item.name);
+  getUserNamesValencia(): string[] {
+    return this.userDataValencia.map(item => item.name);
   }
 
-  getUserTime(): number[] {
-    return this.userData.map(item => item.time);
+  getUserTimeValencia(): number[] {
+    return this.userDataValencia.map(item => item.time);
   }
 }
 
