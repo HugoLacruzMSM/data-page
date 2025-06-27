@@ -1,17 +1,38 @@
-
 @use '@angular/material' as mat;
+@use 'sass:map';
+@use 'theme/custom-theme' as theme;
+
 
 html {
   @include mat.theme((
     color: (
       theme-type: light,
-      primary: mat.$azure-palette,
-      tertiary: mat.$blue-palette,
+      primary: theme.$msm-primary,
+      tertiary: theme.$msm-secondary,
     ),
-    typography: Roboto,
+    typography: Montserrat,
     density: 0,
   ));
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Montserrat, "Helvetica Neue", sans-serif;
+}
+
+
+$msm-primary: mat.m2-define-palette(#004f6f);
+$msm-secondary: mat.m2-define-palette(#dca817);
+
+$msm-theme: mat.m2-define-light-theme((
+  color: (
+    primary: $msm-primary,
+    secondary: $msm-secondary,
+  )
+));
+
+@include mat.all-component-themes($msm-theme);

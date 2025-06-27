@@ -4,6 +4,16 @@
   "newProjectRoot": "projects",
   "projects": {
     "data-page": {
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "es-PR": {
+            "translation": [
+              "src/locale/messages.es.xlf"
+            ]
+          }
+        }
+      },
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,11 +27,20 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src"
+              ]
+            },
+            "localize": [
+              "es-PR"
+            ],
             "outputPath": "dist/data-page",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
-              "zone.js"
+              "zone.js",
+              "@angular/localize/init"
             ],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
@@ -63,6 +82,11 @@
               "sourceMap": true,
               "ssr": false,
               "prerender": false
+            },
+            "es-PR": {
+              "localize": [
+                "es-PR"
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -70,6 +94,9 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
+            "es-PR": {
+              "buildTarget": "data-page:build:development,es-PR"
+            },
             "production": {
               "buildTarget": "data-page:build:production"
             },
