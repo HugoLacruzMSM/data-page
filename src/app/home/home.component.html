@@ -16,6 +16,10 @@
     </section>
   </mat-sidenav>
   <mat-sidenav-content class="mat-sidenav-content">
+    <h1 class="text" i18n>Hi world</h1>
+    <h3 i18n>Thank you</h3>
+    <h4 i18n>{{ "05/12/2005" | date }}</h4>
+    <h4 i18n>{{ 120 | currency }}</h4>
     <div class="graph-container">
       <div class="line-chart-div">
         <app-line-chart [userDataValencia]="dataChartValencia()"></app-line-chart>

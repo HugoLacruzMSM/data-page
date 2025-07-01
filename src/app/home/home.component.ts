@@ -9,6 +9,8 @@ import {MixedChartComponent} from '../charts/mixed-chart/mixed-chart.component';
 import {DataService} from '../service/data.service';
 import {EatenTacosStore} from '../store/eaten-tacos.store';
 import {LineChartComponent} from '../charts/line-chart/line-chart.component';
+import {CurrencyPipe, DatePipe} from '@angular/common';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -24,6 +26,8 @@ import {LineChartComponent} from '../charts/line-chart/line-chart.component';
     BarChartComponent,
     MixedChartComponent,
     LineChartComponent,
+    DatePipe,
+    CurrencyPipe,
 
   ],
   templateUrl: './home.component.html',
@@ -31,13 +35,16 @@ import {LineChartComponent} from '../charts/line-chart/line-chart.component';
   providers: [EatenTacosStore],
 })
 export class HomeComponent implements OnInit {
+  title = 'Your Receipt';
   eatenTacosStore = inject(EatenTacosStore);
 
   dataChartValencia = this.eatenTacosStore.eatenTacosValencia;
   dataChartMadrid = this.eatenTacosStore.eatenTacosMadrid;
   dataChartBarcelona = this.eatenTacosStore.eatenTacosBarcelona;
 
-  constructor(private dataService: DataService) {
+  constructor(private dataService: DataService, private titleService: Title) {
+    this.titleService.setTitle($localize`${this.title}`);
+
   }
 
   ngOnInit() {
